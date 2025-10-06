@@ -34,7 +34,7 @@ namespace Polytube.SessionReplay
             }
 
             SessionTempDir = Path.Combine(Application.temporaryCachePath, "com.polytube.sessionreplay");
-            SessionStreamingAssetDir = Path.Combine(Application.streamingAssetsPath, "com.polytube.sessionreplay");
+            SessionStreamingAssetDir = Application.streamingAssetsPath;
             ReplayExePath = Path.Combine(SessionStreamingAssetDir, "replay.exe");
 
             Creds.apiId = apiId;
