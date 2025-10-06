@@ -5,7 +5,7 @@
   "description": "Records gameplay sessions and uploads them to the cloud.",
   "author": {
     "name": "Polytube",
-    "url": "https://polytube.itch.io/"
+    "url": "https://www.polytube.io/"
   },
   "documentationUrl": "https://github.com/AmirSolt/Unity-Package",
   "changelogUrl": "https://github.com/AmirSolt/Unity-Package/com.polytube.sessionreplay/CHANGELOG.md",
