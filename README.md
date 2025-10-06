@@ -1,7 +1,6 @@
 <h1 align="center">
-  <img width="600" src="/logo_name.png" alt="Session Replay">
+  <img width="800" src="/logo_name.png" alt="Session Replay">
 </h1>
-
 <p align="center">
   <p align="center">
   This tool <b>records gameplay sessions</b> for playtesting and debugging. It uses <b>GPU duplication</b> for high performance and minimal impact on system resources, and can automatically upload recordings to the <b>cloud</b> when valid credentials are provided.</p>
