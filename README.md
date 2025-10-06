@@ -8,7 +8,7 @@
 
 
 
-## Instructions
+## Instructions (Unity)
 
 1. **Add the package** to your Unity project.
    It will automatically add `replay.exe` to your `StreamingAssets` inside the `Assets` folder.
