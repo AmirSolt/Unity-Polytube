@@ -6,6 +6,12 @@
   This tool <b>records gameplay sessions</b> for playtesting and debugging. It uses <b>GPU duplication</b> for high performance and minimal impact on system resources, and can automatically upload recordings to the <b>cloud</b> when valid credentials are provided.</p>
 </p>
 
+<h4 align="center">
+  <a href="https://polytube.io/">Cloud Storage</a> |
+  <a href="https://assetstore.unity.com/packages/slug/338050">Unity Asset Store</a> |
+  <a href="https://polytube.itch.io/">Itch.io Page</a> |
+</h4>
+
 
 
 ## Instructions (Unity)
