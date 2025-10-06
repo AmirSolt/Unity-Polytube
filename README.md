@@ -1,16 +1,14 @@
 <h1 align="center">
-  <img width="300" src="/logo_name.png" alt="infisical">
+  <img width="500" src="/logo_name.png" alt="Session Replay">
 </h1>
+
+# Session Replay
 <p align="center">
   <p align="center">
   This tool <b>records gameplay sessions</b> for playtesting and debugging. It uses <b>GPU duplication</b> for high performance and minimal impact on system resources, and can automatically upload recordings to the <b>cloud</b> when valid credentials are provided.</p>
 </p>
 
 
-# Session Replay
-## Polytube
-
-This tool records gameplay sessions for playtesting and debugging. It uses GPU duplication for high performance and minimal impact on system resources, and can automatically upload recordings to the cloud when valid credentials are provided.
 
 ## Instructions
 
