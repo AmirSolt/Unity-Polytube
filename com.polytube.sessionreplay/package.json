@@ -3,15 +3,14 @@
   "version": "1.0.0",
   "displayName": "Session Replay",
   "description": "Records gameplay sessions and uploads them to the cloud.",
-  "documentationUrl": "https://example.com/",
-  "changelogUrl": "https://example.com/changelog.html",
-  "licensesUrl": "https://example.com/licensing.html",
-  "keywords": [],
-  "dependencies": {
-  },
   "author": {
     "name": "Polytube",
-    "email": "unity@example.com",
-    "url": "https://www.unity3d.com"
+    "url": "https://polytube.itch.io/"
+  },
+  "documentationUrl": "https://github.com/AmirSolt/Unity-Package",
+  "changelogUrl": "https://github.com/AmirSolt/Unity-Package/com.polytube.sessionreplay/CHANGELOG.md",
+  "licensesUrl": "https://github.com/AmirSolt/Unity-Package/com.polytube.sessionreplay/LICENSE",
+  "keywords": [],
+  "dependencies": {
   }
 }

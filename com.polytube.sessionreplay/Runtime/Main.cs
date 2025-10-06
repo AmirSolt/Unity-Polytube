@@ -23,7 +23,7 @@ namespace Polytube.SessionReplay
         private static AppCreds Creds = new();
 
 
-        public static void Start(string apiId, string apiKey)
+        public static void Start(string apiId="", string apiKey="")
         {
             if (exeProcess != null) return;
 
@@ -105,6 +105,8 @@ namespace Polytube.SessionReplay
 
                 exeProcess = null;
                 exeWriter = null;
+
+                // process will close itself after cleaning up tasks
 
                 UnityEngine.Debug.Log("[SessionReplay] Closed log pipe, replay.exe will finish uploads and exit.");
             }
