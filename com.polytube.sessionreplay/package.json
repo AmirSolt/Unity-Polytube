@@ -5,6 +5,7 @@
   "description": "Records gameplay sessions and uploads them to the cloud.",
   "author": {
     "name": "Polytube",
+    "email": "support@polytube.io",
     "url": "https://www.polytube.io/"
   },
   "documentationUrl": "https://github.com/AmirSolt/Unity-Package",
