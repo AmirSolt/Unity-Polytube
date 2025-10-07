@@ -18,12 +18,11 @@
 ### 1. Add the package
 
 1. **Download the project** as a ZIP file from GitHub:
-   [https://github.com/AmirSolt/Unity-Session-Replay/archive/refs/tags/recording.zip](https://github.com/AmirSolt/Unity-Session-Replay/archive/refs/tags/recording.zip)
+   [https://github.com/AmirSolt/Unity-Session-Replay/archive/refs/heads/main.zip](https://github.com/AmirSolt/Unity-Session-Replay/archive/refs/heads/main.zip)
 
 2. **Extract the ZIP** and place the folder named `com.polytube.sessionreplay` inside your Unity project’s `Packages/` directory.
 
-3. **Download the executable** from the latest release:
-   [https://github.com/AmirSolt/Unity-Session-Replay/releases/download/recording/replay.exe](https://github.com/AmirSolt/Unity-Session-Replay/releases/download/recording/replay.exe)
+3. **Download the executable** from the latest release, download replay.exe: [https://github.com/AmirSolt/replay/releases](https://github.com/AmirSolt/replay/releases)
 
 4. **Place** the downloaded `replay.exe` file inside your Unity project’s `Assets/StreamingAssets/` directory.
 
