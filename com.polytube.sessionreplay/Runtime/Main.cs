@@ -10,6 +10,7 @@ namespace Polytube.SessionReplay
     {
         public string apiId;
         public string apiKey;
+        public string sessionId;
     }
 
     public static class Main
@@ -23,7 +24,7 @@ namespace Polytube.SessionReplay
         private static AppCreds Creds = new();
 
 
-        public static void Start(string apiId="", string apiKey="")
+        public static void Start(string apiId="", string apiKey="", string sessionId="")
         {
             if (exeProcess != null) return;
 
@@ -39,6 +40,7 @@ namespace Polytube.SessionReplay
 
             Creds.apiId = apiId;
             Creds.apiKey = apiKey;
+            Creds.sessionId = sessionId;
 
             StartExe();
 
@@ -77,7 +79,8 @@ namespace Polytube.SessionReplay
                 "--title", $"\"{title}\"",
                 "--out", $"\"{SessionTempDir}\"",
                 "--api-id", Creds.apiId,
-                "--api-key", Creds.apiKey
+                "--api-key", Creds.apiKey,
+                "--session-id", Creds.sessionId
             };
 
             var psi = new ProcessStartInfo
