@@ -23,33 +23,98 @@ namespace Polytube.SessionReplay
 
         private static AppCreds Creds = new();
 
-
-        public static void Start(string apiId="", string apiKey="")
+        // --------------------------
+        // Entry point for auto-load
+        // --------------------------
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        public static void Load()
         {
-            if (exeProcess != null) return;
+            if (!InitializeEnvironment()) return;
 
+            StartReplayProcess(new List<string> { "--load" }, memorize: false);
+        }
+
+        // --------------------------
+        // Manual start with credentials
+        // --------------------------
+        public static void Start(string apiId = "", string apiKey = "")
+        {
+            if (exeProcess != null) return; // already started
+
+            if (!InitializeEnvironment()) return;
+
+            Creds.apiId = apiId;
+            Creds.apiKey = apiKey;
+
+            var args = new List<string>
+            {
+                "--title", $"\"{Application.productName}\"",
+                "--out", $"\"{SessionTempDir}\""
+            };
+
+            if (!string.IsNullOrEmpty(apiId)) args.AddRange(new[] { "--api-id", apiId });
+            if (!string.IsNullOrEmpty(apiKey)) args.AddRange(new[] { "--api-key", apiKey });
+
+            StartReplayProcess(args, memorize: true);
+
+            // Subscribe to logs and quit
+            Application.logMessageReceived += OnConsoleLog;
+            Application.quitting += OnQuit;
+        }
+
+        // --------------------------
+        // Common environment setup
+        // --------------------------
+        private static bool InitializeEnvironment()
+        {
             if (SystemInfo.operatingSystemFamily != OperatingSystemFamily.Windows)
             {
-                UnityEngine.Debug.LogWarning("Replay only supported on Windows.");
-                return;
+                UnityEngine.Debug.LogWarning("[SessionReplay] Replay only supported on Windows.");
+                return false;
             }
 
             SessionTempDir = Path.Combine(Application.temporaryCachePath, "com.polytube.sessionreplay");
             SessionStreamingAssetDir = Application.streamingAssetsPath;
             ReplayExePath = Path.Combine(SessionStreamingAssetDir, "replay.exe");
 
-            Creds.apiId = apiId;
-            Creds.apiKey = apiKey;
+            if (!File.Exists(ReplayExePath))
+            {
+                UnityEngine.Debug.LogError($"[SessionReplay] replay.exe not found at: {ReplayExePath}");
+                return false;
+            }
 
-            StartExe();
-
-            // Subscribe to Unity logs
-            Application.logMessageReceived += OnConsoleLog;
-
-            // When Unity quits, we close stdin (don’t kill process)
-            Application.quitting += OnQuit;
+            return true;
         }
 
+        // --------------------------
+        // Start process helper
+        // --------------------------
+        private static void StartReplayProcess(List<string> args, bool memorize)
+        {
+            var psi = new ProcessStartInfo
+            {
+                FileName = ReplayExePath,
+                Arguments = string.Join(" ", args),
+                UseShellExecute = false,
+                RedirectStandardInput = memorize,
+                CreateNoWindow = true
+            };
+
+            var process = new Process { StartInfo = psi, EnableRaisingEvents = memorize };
+            process.Start();
+
+            UnityEngine.Debug.Log($"[SessionReplay] Started replay.exe (PID {process.Id}) with args: {psi.Arguments}");
+
+            if (memorize)
+            {
+                exeProcess = process;
+                exeWriter = process.StandardInput;
+            }
+        }
+
+        // --------------------------
+        // Logging pipe
+        // --------------------------
         private static void OnConsoleLog(string logString, string stackTrace, LogType type)
         {
             if (exeWriter == null) return;
@@ -69,45 +134,16 @@ namespace Polytube.SessionReplay
             }
         }
 
-        private static void StartExe()
-        {
-            string title = Application.productName;
-
-            var args = new List<string>
-            {
-                "--title", $"\"{title}\"",
-                "--out", $"\"{SessionTempDir}\"",
-                "--api-id", Creds.apiId,
-                "--api-key", Creds.apiKey
-            };
-
-            var psi = new ProcessStartInfo
-            {
-                FileName = ReplayExePath,
-                Arguments = string.Join(" ", args),
-                UseShellExecute = false,
-                RedirectStandardInput = true, // 👈 for piping logs
-                CreateNoWindow = true
-            };
-
-            exeProcess = new Process { StartInfo = psi, EnableRaisingEvents = true };
-            exeProcess.Start();
-
-            exeWriter = exeProcess.StandardInput;
-
-            UnityEngine.Debug.Log($"[SessionReplay] Started replay.exe with PID {exeProcess.Id}");
-        }
-
+        // --------------------------
+        // Cleanup on quit
+        // --------------------------
         private static void OnQuit()
         {
             try
             {
                 exeWriter?.Close();
-
                 exeProcess = null;
                 exeWriter = null;
-
-                // process will close itself after cleaning up tasks
 
                 UnityEngine.Debug.Log("[SessionReplay] Closed log pipe, replay.exe will finish uploads and exit.");
             }
