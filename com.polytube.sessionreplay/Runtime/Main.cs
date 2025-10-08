@@ -31,7 +31,14 @@ namespace Polytube.SessionReplay
         {
             if (!InitializeEnvironment()) return;
 
-            StartReplayProcess(new List<string> { "--load" }, memorize: false);
+             var args = new List<string>
+            {
+                "--load",
+                "--out", $"\"{SessionTempDir}\""
+            };
+
+
+            StartReplayProcess(args, memorize: false);
         }
 
         // --------------------------
@@ -74,8 +81,7 @@ namespace Polytube.SessionReplay
             }
 
             SessionTempDir = Path.Combine(Application.temporaryCachePath, "com.polytube.sessionreplay");
-            SessionStreamingAssetDir = Application.streamingAssetsPath;
-            ReplayExePath = Path.Combine(SessionStreamingAssetDir, "replay.exe");
+            ReplayExePath = Path.Combine(Application.streamingAssetsPath, "replay.exe");
 
             if (!File.Exists(ReplayExePath))
             {
