@@ -33,12 +33,13 @@ namespace Polytube.SessionReplay
 
 
             StartReplayProcess(args, memorize: false);
+
         }
 
         // --------------------------
         // Manual start with credentials
         // --------------------------
-        public static void Start(Dictionary<string, string> userFlags)
+        public static void Start(Dictionary<string, string> userFlags=new { })
         {
             if (exeProcess != null) return; // already started
 

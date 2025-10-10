@@ -13,7 +13,7 @@
 
 ---
 
-## Instructions (Unity)
+## Unity Instructions (4 Steps)
 
 ### 1. Add the package
 
@@ -22,13 +22,17 @@
 
 2. **Extract the ZIP** and place the folder named `com.polytube.sessionreplay` inside your Unity project’s `Packages/` directory.
 
-3. **Download the executable** from the latest release, download replay.exe: [https://github.com/AmirSolt/replay/releases](https://github.com/AmirSolt/replay/releases)
+---
 
-4. **Place** the downloaded `replay.exe` file inside your Unity project’s `Assets/StreamingAssets/` directory.
+### 2. Add the Replay.exe
+
+1. **Download the executable** from the latest release: [https://github.com/AmirSolt/replay/releases](https://github.com/AmirSolt/replay/releases)
+
+2. **Place** the downloaded `replay.exe` file inside your Unity project’s `Assets/StreamingAssets/` directory.
 
 ---
 
-### 2. Start recording
+### 3. Start recording
 
 Call the following method from your code:
 
@@ -38,13 +42,8 @@ Polytube.SessionReplay.Main.Start();
 
 This starts recording the game window and saves the files to `Application.temporaryCachePath`.
 
-> Make sure to obtain proper consent and respect player privacy.
+> **🚨 IMPORTANT:** Make sure to obtain proper consent agreements before recording. Respect user's privacy,
 
----
-
-### 3. Do not close the program manually
-
-The recorder will shut down automatically when the game window closes. Do **not** kill the process manually.
 
 ---
 
@@ -57,5 +56,29 @@ You can sign up for access at: [https://www.polytube.io/](https://www.polytube.i
 Example:
 
 ```csharp
-Polytube.SessionReplay.Main.Start("<API_ID>", "<API_KEY>");
+Polytube.SessionReplay.Main.Start(new Dictionary<string, string>{
+  {"--api-id", "<YOUR API ID>"},
+  {"--api-key", "<YOUR API KEY>"}
+});
 ```
+---
+
+## Notes
+
+---
+
+### - Do not close the program manually
+
+The recorder is designed to shut down automatically when the target window closes. Do not kill the process abruptly.
+
+### Proper Consent Forms
+
+Make sure you comply with privacy laws in every region where your software will be released. If your application uses cloud storage and doesn't meet these regulations, it could be banned or restricted.
+
+---
+
+## Arguments
+
+---
+
+This package is a thin wrapper around 'Replay.exe'. For more information visit: 
