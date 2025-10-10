@@ -22,7 +22,6 @@
 
 2. **Extract the ZIP** and place the folder named `com.polytube.sessionreplay` inside your Unity project’s `Packages/` directory.
 
----
 
 ### 2. Add the Replay.exe
 
@@ -30,7 +29,6 @@
 
 2. **Place** the downloaded `replay.exe` file inside your Unity project’s `Assets/StreamingAssets/` directory.
 
----
 
 ### 3. Start recording
 
@@ -47,7 +45,6 @@ This starts recording the game window and saves the files to `Application.tempor
 > **🚨 IMPORTANT:** Make sure to obtain proper consent agreements before recording. Respect user's privacy,
 
 
----
 
 ### 4. (Optional) Enable cloud uploads
 
@@ -69,9 +66,8 @@ Polytube.SessionReplay.Main.Start(new Dictionary<string, string>{
 
 ## Notes
 
----
 
-### - Do not close the program manually
+### Do not close the program manually
 
 The recorder is designed to shut down automatically when the target window closes. Do not kill the process abruptly.
 
@@ -81,8 +77,7 @@ Make sure you comply with privacy laws in every region where your software will 
 
 ---
 
-## Arguments
+## Replay Docs
 
----
 
-This package is a thin wrapper around 'Replay.exe'. For more information visit: 
+This package is a thin wrapper around 'Replay.exe'. For more information visit: [https://github.com/AmirSolt/replay](https://github.com/AmirSolt/replay)
