@@ -63,7 +63,7 @@ Polytube.SessionReplay.Main.Start(new Dictionary<string, string>{
 ## Notes
 
 
-### - Do not close the program manually
+### Do not close the program manually
 
 The recorder is designed to shut down automatically when the target window closes. Do not kill the process abruptly.
 
