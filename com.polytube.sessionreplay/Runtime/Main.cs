@@ -6,12 +6,6 @@ using System.Diagnostics;
 
 namespace Polytube.SessionReplay
 {
-    public class AppCreds
-    {
-        public string apiId;
-        public string apiKey;
-        public string sessionId;
-    }
 
     public static class Main
     {
@@ -21,17 +15,16 @@ namespace Polytube.SessionReplay
         private static Process exeProcess;
         private static StreamWriter exeWriter;
 
-        private static AppCreds Creds = new();
 
         // --------------------------
         // Entry point for auto-load
         // --------------------------
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-        public static void Load()
+        private static void Load()
         {
             if (!InitializeEnvironment()) return;
 
-             var args = new List<string>
+            var args = new List<string>
             {
                 "--load",
                 "--out", $"\"{SessionTempDir}\""
@@ -44,23 +37,24 @@ namespace Polytube.SessionReplay
         // --------------------------
         // Manual start with credentials
         // --------------------------
-        public static void Start(string apiId = "", string apiKey = "")
+        public static void Start(Dictionary<string, string> userFlags)
         {
             if (exeProcess != null) return; // already started
 
             if (!InitializeEnvironment()) return;
 
-            Creds.apiId = apiId;
-            Creds.apiKey = apiKey;
-
-            var args = new List<string>
+            
+            Dictionary<string, string> defaultFlags = new Dictionary<string, string>
             {
-                "--title", $"\"{Application.productName}\"",
-                "--out", $"\"{SessionTempDir}\""
+                {"--title",$"\"{Application.productName}\""},
+                {"--app-name",$"\"{Application.productName}\""},
+                {"--app-version",$"\"{Application.version}\""},
+                {"--out",$"\"{SessionTempDir}\""},
             };
 
-            if (!string.IsNullOrEmpty(apiId)) args.AddRange(new[] { "--api-id", apiId });
-            if (!string.IsNullOrEmpty(apiKey)) args.AddRange(new[] { "--api-key", apiKey });
+            Dictionary<string, string> flags = MergeFlags(defaultFlags, userFlags);
+
+            List<string> args = flags.Select(kvp => $"{kvp.Key} {kvp.Value}").ToList();
 
             StartReplayProcess(args, memorize: true);
 
@@ -158,5 +152,27 @@ namespace Polytube.SessionReplay
                 UnityEngine.Debug.LogWarning($"[SessionReplay] OnQuit cleanup error: {ex.Message}");
             }
         }
+
+        // --------------------------
+        // Merge flags
+        // --------------------------
+        private static Dictionary<string, string> MergeFlags(
+            Dictionary<string, string> defaultFlags,
+            Dictionary<string, string> userFlags)
+        {
+            // Create a copy so we don't mutate the original
+            Dictionary<string, string> merged = new Dictionary<string, string>(defaultFlags);
+
+            foreach (var kvp in userFlags)
+            {
+                if (merged.ContainsKey(kvp.Key))
+                    merged[kvp.Key] = kvp.Value; // Replace existing
+                else
+                    merged.Add(kvp.Key, kvp.Value); // Add new flag
+            }
+
+            return merged;
+        }
+
     }
 }
