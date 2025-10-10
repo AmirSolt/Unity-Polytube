@@ -37,6 +37,8 @@
 Call the following method from your code:
 
 ```csharp
+using Polytube.SessionReplay;
+
 Polytube.SessionReplay.Main.Start();
 ```
 
@@ -56,6 +58,8 @@ You can sign up for access at: [https://www.polytube.io/](https://www.polytube.i
 Example:
 
 ```csharp
+using Polytube.SessionReplay;
+
 Polytube.SessionReplay.Main.Start(new Dictionary<string, string>{
   {"--api-id", "<YOUR API ID>"},
   {"--api-key", "<YOUR API KEY>"}
