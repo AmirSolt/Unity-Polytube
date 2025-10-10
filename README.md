@@ -77,8 +77,8 @@ Make sure you comply with privacy laws in every region where your software will 
 
 ---
 
-## Arguments
+## Replay Docs
 
 ---
 
-This package is a thin wrapper around 'Replay.exe'. For more information visit: 
+This package is a thin wrapper around 'Replay.exe'. For more information visit: [https://github.com/AmirSolt/replay](https://github.com/AmirSolt/replay)
