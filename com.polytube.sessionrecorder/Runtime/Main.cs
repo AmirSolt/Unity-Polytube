@@ -11,7 +11,6 @@ namespace Polytube.SessionRecorder
     public static class Main
     {
         private static string SessionTempDir = "";
-        private static string SessionStreamingAssetDir = "";
         private static string ExePath = "";
         private static Process exeProcess;
         private static StreamWriter exeWriter;
@@ -94,7 +93,7 @@ namespace Polytube.SessionRecorder
         // --------------------------
         // Start process helper
         // --------------------------
-        private static void StartProcess(List<string> args, bool memorize)
+        private static void StartExeProcess(List<string> args, bool memorize)
         {
             var psi = new ProcessStartInfo
             {
