@@ -35,7 +35,7 @@
 Call the following method from your code:
 
 ```csharp
-using Polytube.Polytube;
+using Polytube.SessionRecorder;
 
 Polytube.SessionRecorder.Main.Start();
 ```
@@ -55,7 +55,7 @@ You can sign up for access at: [https://www.polytube.io/](https://www.polytube.i
 Example:
 
 ```csharp
-using Polytube.Polytube;
+using Polytube.SessionRecorder;
 
 Polytube.SessionRecorder.Main.Start(new Dictionary<string, string>{
   {"--api-id", "<YOUR API ID>"},
