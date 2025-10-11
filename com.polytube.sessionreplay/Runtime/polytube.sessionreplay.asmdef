@@ -1,6 +1,6 @@
 {
-    "name": "polytube.sessionreplay",
-    "rootNamespace": "Polytube.SessionReplay",
+    "name": "polytube.sessionrecorder",
+    "rootNamespace": "Polytube.SessionRecorder",
     "references": [
     ],
     "includePlatforms": [],

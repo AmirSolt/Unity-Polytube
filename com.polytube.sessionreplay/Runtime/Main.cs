@@ -5,14 +5,14 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 
-namespace Polytube.SessionReplay
+namespace Polytube.SessionRecorder
 {
 
     public static class Main
     {
         private static string SessionTempDir = "";
         private static string SessionStreamingAssetDir = "";
-        private static string ReplayExePath = "";
+        private static string ExePath = "";
         private static Process exeProcess;
         private static StreamWriter exeWriter;
 
@@ -32,7 +32,7 @@ namespace Polytube.SessionReplay
             };
 
 
-            StartReplayProcess(args, memorize: false);
+            StartExeProcess(args, memorize: false);
 
         }
 
@@ -58,7 +58,7 @@ namespace Polytube.SessionReplay
 
             List<string> args = flags.Select(kvp => $"{kvp.Key} {kvp.Value}").ToList();
 
-            StartReplayProcess(args, memorize: true);
+            StartExeProcess(args, memorize: true);
 
             // Subscribe to logs and quit
             Application.logMessageReceived += OnConsoleLog;
@@ -72,16 +72,16 @@ namespace Polytube.SessionReplay
         {
             if (SystemInfo.operatingSystemFamily != OperatingSystemFamily.Windows)
             {
-                UnityEngine.Debug.LogWarning("[SessionReplay] Replay only supported on Windows.");
+                UnityEngine.Debug.LogWarning("[SessionRecorder] Polytube only supported on Windows.");
                 return false;
             }
 
-            SessionTempDir = Path.Combine(Application.temporaryCachePath, "com.polytube.sessionreplay");
-            ReplayExePath = Path.Combine(Application.streamingAssetsPath, "replay.exe");
+            SessionTempDir = Path.Combine(Application.temporaryCachePath, "com.polytube.sessionrecorder");
+            ExePath = Path.Combine(Application.streamingAssetsPath, "polytube.exe");
 
-            if (!File.Exists(ReplayExePath))
+            if (!File.Exists(ExePath))
             {
-                UnityEngine.Debug.LogError($"[SessionReplay] replay.exe not found at: {ReplayExePath}");
+                UnityEngine.Debug.LogError($"[SessionRecorder] polytube.exe not found at: {ExePath}");
                 return false;
             }
 
@@ -91,11 +91,11 @@ namespace Polytube.SessionReplay
         // --------------------------
         // Start process helper
         // --------------------------
-        private static void StartReplayProcess(List<string> args, bool memorize)
+        private static void StartProcess(List<string> args, bool memorize)
         {
             var psi = new ProcessStartInfo
             {
-                FileName = ReplayExePath,
+                FileName = ExePath,
                 Arguments = string.Join(" ", args),
                 UseShellExecute = false,
                 RedirectStandardInput = memorize,
@@ -105,7 +105,7 @@ namespace Polytube.SessionReplay
             var process = new Process { StartInfo = psi, EnableRaisingEvents = memorize };
             process.Start();
 
-            UnityEngine.Debug.Log($"[SessionReplay] Started replay.exe (PID {process.Id}) with args: {psi.Arguments}");
+            UnityEngine.Debug.Log($"[SessionRecorder] Started polytube.exe (PID {process.Id}) with args: {psi.Arguments}");
 
             if (memorize)
             {
@@ -132,7 +132,7 @@ namespace Polytube.SessionReplay
             }
             catch (Exception ex)
             {
-                UnityEngine.Debug.LogWarning($"[SessionReplay] Failed to write log to replay.exe: {ex.Message}");
+                UnityEngine.Debug.LogWarning($"[SessionRecorder] Failed to write log to polytube.exe: {ex.Message}");
             }
         }
 
@@ -147,11 +147,11 @@ namespace Polytube.SessionReplay
                 exeProcess = null;
                 exeWriter = null;
 
-                UnityEngine.Debug.Log("[SessionReplay] Closed log pipe, replay.exe will finish uploads and exit.");
+                UnityEngine.Debug.Log("[SessionRecorder] Closed log pipe, polytube.exe will finish uploads and exit.");
             }
             catch (Exception ex)
             {
-                UnityEngine.Debug.LogWarning($"[SessionReplay] OnQuit cleanup error: {ex.Message}");
+                UnityEngine.Debug.LogWarning($"[SessionRecorder] OnQuit cleanup error: {ex.Message}");
             }
         }
 

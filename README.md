@@ -37,7 +37,7 @@ Call the following method from your code:
 ```csharp
 using Polytube.Polytube;
 
-Polytube.SessionReplay.Main.Start();
+Polytube.SessionRecorder.Main.Start();
 ```
 
 This starts recording the game window and saves the files to `Application.temporaryCachePath`.
@@ -57,7 +57,7 @@ Example:
 ```csharp
 using Polytube.Polytube;
 
-Polytube.SessionReplay.Main.Start(new Dictionary<string, string>{
+Polytube.SessionRecorder.Main.Start(new Dictionary<string, string>{
   {"--api-id", "<YOUR API ID>"},
   {"--api-key", "<YOUR API KEY>"}
 });
