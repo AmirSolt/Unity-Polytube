@@ -1,8 +1,8 @@
 <h1 align="center">
-  <img width="800" src="/logo_name.png" alt="Session Replay">
+  <img width="800" src="/logo_name.png" alt="Polytube Logo">
 </h1>
 <p align="center">
-  Replay is an analytics tool that <b>records gameplay sessions</b> for playtesting and debugging. It uses <b>GPU duplication</b> for high performance and minimal impact on system resources, and can automatically upload recordings to the <b>cloud</b> when valid credentials are provided. This Unity packge provides an easy to use wrapper around Replay.
+  Polytube is an analytics tool that <b>records gameplay sessions</b> for playtesting and debugging. It uses <b>GPU duplication</b> for high performance and minimal impact on system resources, and can automatically upload recordings to the <b>cloud</b> when valid credentials are provided. This Unity packge provides an easy to use wrapper around Polytube.exe.
 </p>
 
 <h4 align="center">
@@ -18,16 +18,16 @@
 ### 1. Add the package
 
 1. **Download the project** as a ZIP file from GitHub:
-   [https://github.com/AmirSolt/Unity-Session-Replay/archive/refs/heads/main.zip](https://github.com/AmirSolt/Unity-Session-Replay/archive/refs/heads/main.zip)
+   [https://github.com/AmirSolt/Unity-Polytube/archive/refs/heads/main.zip](https://github.com/AmirSolt/Unity-Polytube/archive/refs/heads/main.zip)
 
-2. **Extract the ZIP** and place the folder named `com.polytube.sessionreplay` inside your Unity project’s `Packages/` directory.
+2. **Extract the ZIP** and place the folder named `com.polytube.polytube` inside your Unity project’s `Packages/` directory.
 
 
-### 2. Add the Replay.exe
+### 2. Add the Polytube.exe
 
-1. **Download the executable** from the latest release: [https://github.com/AmirSolt/replay/releases](https://github.com/AmirSolt/replay/releases)
+1. **Download the executable** from the latest release: [https://github.com/AmirSolt//releases](https://github.com/AmirSolt/polytube/releases)
 
-2. **Place** the downloaded `replay.exe` file inside your Unity project’s `Assets/StreamingAssets/` directory.
+2. **Place** the downloaded `Polytube.exe` file inside your Unity project’s `Assets/StreamingAssets/` directory.
 
 
 ### 3. Start recording
@@ -35,9 +35,9 @@
 Call the following method from your code:
 
 ```csharp
-using Polytube.SessionReplay;
+using Polytube.Polytube;
 
-Polytube.SessionReplay.Main.Start();
+Polytube.Polytube.Main.Start();
 ```
 
 This starts recording the game window and saves the files to `Application.temporaryCachePath`.
@@ -55,9 +55,9 @@ You can sign up for access at: [https://www.polytube.io/](https://www.polytube.i
 Example:
 
 ```csharp
-using Polytube.SessionReplay;
+using Polytube.Polytube;
 
-Polytube.SessionReplay.Main.Start(new Dictionary<string, string>{
+Polytube.Polytube.Main.Start(new Dictionary<string, string>{
   {"--api-id", "<YOUR API ID>"},
   {"--api-key", "<YOUR API KEY>"}
 });
@@ -77,7 +77,7 @@ Make sure you comply with privacy laws in every region where your software will 
 
 ---
 
-## Replay Docs
+## Polytube Docs
 
 
-This package is a thin wrapper around 'Replay.exe'. For more information visit: [https://github.com/AmirSolt/replay](https://github.com/AmirSolt/replay)
+This package is a thin wrapper around 'Polytube.exe'. For more information visit: [https://github.com/AmirSolt/polytube](https://github.com/AmirSolt/polytube)
