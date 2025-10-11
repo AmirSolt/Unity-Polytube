@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img width="800" src="/logo_name.png" alt="Polytube Logo">
+  <img width="800" src="/unity_banner.png" alt="Polytube Logo">
 </h1>
 <p align="center">
   Polytube is an analytics tool that <b>records gameplay sessions</b> for playtesting and debugging. It uses <b>GPU duplication</b> for high performance and minimal impact on system resources, and can automatically upload recordings to the <b>cloud</b> when valid credentials are provided. This Unity packge provides an easy to use wrapper around Polytube.exe.
