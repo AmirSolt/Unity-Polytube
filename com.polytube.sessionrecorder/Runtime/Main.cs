@@ -39,8 +39,11 @@ namespace Polytube.SessionRecorder
         // --------------------------
         // Manual start with credentials
         // --------------------------
-        public static void Start(Dictionary<string, string> userFlags=new { })
+        public static void Start(Dictionary<string, string> userFlags=null)
         {
+
+            userFlags ??= new Dictionary<string, string>();
+            
             if (exeProcess != null) return; // already started
 
             if (!InitializeEnvironment()) return;
