@@ -2,7 +2,7 @@
   <img width="800" src="/unity_banner.png" alt="Polytube Logo">
 </h1>
 <p align="center">
-  Polytube is an analytics tool that <b>records gameplay sessions</b> for playtesting and debugging. It uses <b>GPU duplication</b> for high performance and minimal impact on system resources, and can automatically upload recordings to the <b>cloud</b> when valid credentials are provided. This Unity packge provides an easy to use wrapper around Polytube.exe.
+  Polytube is an analytics tool that <b>records gameplay sessions</b> for playtesting and debugging. It uses <b>GPU duplication</b> for high performance and minimal impact on system resources, and can automatically upload recordings to the <b>cloud</b> when valid credentials are provided. This Unity packge provides an easy to use wrapper around polytube.exe.
 </p>
 
 <h4 align="center">
@@ -23,11 +23,11 @@
 2. **Extract the ZIP** and place the folder named `com.polytube.polytube` inside your Unity project’s `Packages/` directory.
 
 
-### 2. Add the Polytube.exe
+### 2. Add the polytube.exe
 
 1. **Download the executable** from the latest release: [https://github.com/AmirSolt//releases](https://github.com/AmirSolt/polytube/releases)
 
-2. **Place** the downloaded `Polytube.exe` file inside your Unity project’s `Assets/StreamingAssets/` directory.
+2. **Place** the downloaded `polytube.exe` file inside your Unity project’s `Assets/StreamingAssets/` directory.
 
 
 ### 3. Start recording
@@ -35,7 +35,7 @@
 Call the following method from your code:
 
 ```csharp
-using Polytube.Polytube;
+using Polytube.SessionRecorder;
 
 Polytube.SessionRecorder.Main.Start();
 ```
@@ -55,7 +55,7 @@ You can sign up for access at: [https://www.polytube.io/](https://www.polytube.i
 Example:
 
 ```csharp
-using Polytube.Polytube;
+using Polytube.SessionRecorder;
 
 Polytube.SessionRecorder.Main.Start(new Dictionary<string, string>{
   {"--api-id", "<YOUR API ID>"},
@@ -80,4 +80,4 @@ Make sure you comply with privacy laws in every region where your software will 
 ## Polytube Docs
 
 
-This package is a thin wrapper around 'Polytube.exe'. For more information visit: [https://github.com/AmirSolt/polytube](https://github.com/AmirSolt/polytube)
+This package is a thin wrapper around 'polytube.exe'. For more information visit: [https://github.com/AmirSolt/polytube](https://github.com/AmirSolt/polytube)
