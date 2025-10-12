@@ -10,10 +10,9 @@
   <a href="https://assetstore.unity.com/packages/slug/338050">Polytube.exe</a>
 </h4>
 
-![Demo](preview_gif.gif)
 
 <p align="center">
-  <img src="preview_gif.gif" alt="Demo" style="width:100%;max-width:800px;">
+  <img src="preview_gif.gif" alt="Demo" style="width:100%;">
 </p>
 
 
