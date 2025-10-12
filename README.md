@@ -12,6 +12,12 @@
 
 ![Demo](preview_gif.gif)
 
+<p align="center">
+  <img src="preview_gif.gif" alt="Demo" style="width:100%;max-width:800px;">
+</p>
+
+
+
 ---
 
 ## Unity Instructions (4 Steps)
