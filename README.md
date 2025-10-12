@@ -7,10 +7,15 @@
 
 <h4 align="center">
   <a href="https://polytube.io/">Polytube Cloud Storage</a> |
-  <a href="https://assetstore.unity.com/packages/slug/338050">Polytube.exe</a>
+  <a href="https://github.com/AmirSolt/polytube">Polytube.exe</a>
 </h4>
 
-![Demo](preview_gif.gif)
+
+<p align="center">
+  <img src="preview_gif.gif" alt="Demo" style="width:600px;">
+</p>
+
+
 
 ---
 
@@ -26,7 +31,7 @@
 
 ### 2. Add the polytube.exe
 
-1. **Download the executable** from the latest release: [https://github.com/AmirSolt//releases](https://github.com/AmirSolt/polytube/releases)
+1. **Download the executable** from the latest release: [https://github.com/AmirSolt/polytube/releases](https://github.com/AmirSolt/polytube/releases)
 
 2. **Place** the downloaded `polytube.exe` file inside your Unity project’s `Assets/StreamingAssets/` directory.
 
@@ -51,7 +56,7 @@ This starts recording the game window and saves the files to `Application.tempor
 
 If you provide an `ApiId` and `ApiKey`, the recordings will automatically upload to the cloud.
 
-You can sign up for access at: [https://www.polytube.io/](https://www.polytube.io/)
+You can sign up for access at: [https://polytube.io/](https://polytube.io/)
 
 Example:
 
