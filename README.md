@@ -11,6 +11,8 @@
   <a href="https://polytube.itch.io/">Itch.io Page</a>
 </h4>
 
+![Demo](preview_gif.gif)
+
 ---
 
 ## Unity Instructions (4 Steps)
