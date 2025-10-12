@@ -56,7 +56,7 @@ This starts recording the game window and saves the files to `Application.tempor
 
 If you provide an `ApiId` and `ApiKey`, the recordings will automatically upload to the cloud.
 
-You can sign up for access at: [https://www.polytube.io/](https://www.polytube.io/)
+You can sign up for access at: [https://polytube.io/](https://polytube.io/)
 
 Example:
 
