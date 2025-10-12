@@ -6,9 +6,8 @@
 </p>
 
 <h4 align="center">
-  <a href="https://polytube.io/">Cloud Storage</a> |
-  <a href="https://assetstore.unity.com/packages/slug/338050">Unity Asset Store</a> |
-  <a href="https://polytube.itch.io/">Itch.io Page</a>
+  <a href="https://polytube.io/">Polytube Cloud Storage</a> |
+  <a href="https://assetstore.unity.com/packages/slug/338050">Polytube.exe</a>
 </h4>
 
 ![Demo](preview_gif.gif)
