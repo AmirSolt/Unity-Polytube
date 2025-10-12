@@ -12,7 +12,7 @@
 
 
 <p align="center">
-  <img src="preview_gif.gif" alt="Demo" style="width:800px;">
+  <img src="preview_gif.gif" alt="Demo" style="width:600px;">
 </p>
 
 
