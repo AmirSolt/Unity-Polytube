@@ -26,7 +26,7 @@
 1. **Download the project** as a ZIP file from GitHub:
    [https://github.com/AmirSolt/Unity-Polytube/archive/refs/heads/main.zip](https://github.com/AmirSolt/Unity-Polytube/archive/refs/heads/main.zip)
 
-2. **Extract the ZIP** and place the folder named `com.polytube.polytube` inside your Unity project’s `Packages/` directory.
+2. **Extract the ZIP** and place the folder named `com.polytube.sessionrecorder` inside your Unity project’s `Packages/` directory.
 
 
 ### 2. Add the polytube.exe
