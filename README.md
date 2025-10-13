@@ -46,7 +46,7 @@ using Polytube.SessionRecorder;
 Polytube.SessionRecorder.Main.Start();
 ```
 
-This starts recording the game window and saves the files to `Application.temporaryCachePath`.
+This starts recording the game window and saves the files to `Application.temporaryCachePath`. this does not run inside the editor.
 
 > **🚨 IMPORTANT:** Make sure to obtain proper consent agreements before recording. Respect user's privacy,
 
