@@ -99,7 +99,7 @@ Since the recorder, `polytube.exe` runs in a different process it will keep reco
 ## Arguments
 
 
-### `--api-id "<ID>"`
+### [Optional] `--api-id "<ID>"`
 
 **Description:**
 Sets the API ID used for authentication when communicating with the upload endpoint.
@@ -108,12 +108,12 @@ Sets the API ID used for authentication when communicating with the upload endpo
 **Example:**
 
 ```bash
-polytube.exe --api-id "user_12345"
+{"--api-id", "<YOUR API ID>"},
 ```
 
 ---
 
-### `--api-key "<Key>"`
+### [Optional] `--api-key "<Key>"`
 
 **Description:**
 Sets the API key used for authentication with the upload endpoint.
@@ -122,35 +122,8 @@ Sets the API key used for authentication with the upload endpoint.
 **Example:**
 
 ```bash
-polytube.exe --api-key "secretkey123"
+{"--api-key", "<YOUR API KEY>"},
 ```
 
 ---
 
-### `--app-name "<Name>"`
-
-**Description:**
-Sets the name of the application or game being recorded.
-**Default:**
-`<Unassigned>`
-**Example:**
-
-```bash
-polytube.exe --app-name "MyCoolGame"
-```
-
----
-
-### `--app-version "<Version>"`
-
-**Description:**
-Specifies the current version of the application being recorded.
-**Details:**
-Use [semantic versioning](https://semver.org/) format, e.g. `1.0.0`.
-**Default:**
-`<Unassigned>`
-**Example:**
-
-```bash
-polytube.exe --app-version "1.3.2"
-```
