@@ -64,6 +64,8 @@ If you provide an `ApiId` and `ApiKey`, the recordings will automatically upload
 
 You can sign up for access at: [https://polytube.io/](https://polytube.io/)
 
+Here's a list of [arguments](#arguments)
+
 Example:
 
 ```csharp
@@ -93,3 +95,62 @@ Since the recorder, `polytube.exe` runs in a different process it will keep reco
 
 ---
 
+
+## Arguments {#arguments}
+
+
+### `--api-id "<ID>"`
+
+**Description:**
+Sets the API ID used for authentication when communicating with the upload endpoint.
+**Details:**
+* Currently it only works with [polytube.io](https://polytube.io) cloud storage.
+**Example:**
+
+```bash
+polytube.exe --api-id "user_12345"
+```
+
+---
+
+### `--api-key "<Key>"`
+
+**Description:**
+Sets the API key used for authentication with the upload endpoint.
+**Details:**
+* Currently it only works with [polytube.io](https://polytube.io) cloud storage.
+**Example:**
+
+```bash
+polytube.exe --api-key "secretkey123"
+```
+
+---
+
+### `--app-name "<Name>"`
+
+**Description:**
+Sets the name of the application or game being recorded.
+**Default:**
+`<Unassigned>`
+**Example:**
+
+```bash
+polytube.exe --app-name "MyCoolGame"
+```
+
+---
+
+### `--app-version "<Version>"`
+
+**Description:**
+Specifies the current version of the application being recorded.
+**Details:**
+Use [semantic versioning](https://semver.org/) format, e.g. `1.0.0`.
+**Default:**
+`<Unassigned>`
+**Example:**
+
+```bash
+polytube.exe --app-version "1.3.2"
+```
