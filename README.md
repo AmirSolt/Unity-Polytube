@@ -93,6 +93,10 @@ Make sure you comply with privacy laws in every region where your software will 
 
 Since the recorder, `polytube.exe` runs in a different process it will keep recording even if your game crashes. Once the game window is closed for any reason it will stop recording and close all services.
 
+### Wipes out previous recordings
+
+Currently, the recorder wipes out any previous recordings, so you don't have to worry about storage space.
+
 ---
 
 
@@ -127,3 +131,6 @@ Sets the API key used for authentication with the cloud storage endpoint.
 
 ---
 
+## Upcoming features
+- Add an option to disable wiping out old sessions.
+- A `Stop()` function to stop the recording manually.
