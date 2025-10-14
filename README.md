@@ -6,6 +6,7 @@
 </p>
 
 <h4 align="center">
+  <a href="#documentation">Documentation</a> |
   <a href="https://polytube.io/">Polytube Cloud Storage</a> |
   <a href="https://github.com/AmirSolt/polytube">Polytube.exe</a>
 </h4>
@@ -51,6 +52,8 @@ using Polytube.SessionRecorder;
 Polytube.SessionRecorder.Main.Start();
 ```
 
+See [documentation](#documentation)
+
 This starts recording the game window and saves the files to `Application.temporaryCachePath`. 
 The recording will close immediately inside the editor since there's no game window.
 
@@ -64,7 +67,7 @@ If you provide an `ApiId` and `ApiKey`, the recordings will automatically upload
 
 You can sign up for access at: [https://polytube.io/](https://polytube.io/)
 
-Here's a list of [arguments](#arguments)
+See [documentation](#documentation)
 
 Example:
 
@@ -100,7 +103,23 @@ Currently, the recorder wipes out any previous recordings, so you don't have to 
 ---
 
 
-## Arguments
+## Documentation
+
+
+### ***Functions***
+
+
+### `Start(Dictionary<string, string> userFlags=null)`
+
+This function starts recording the game window and saves the files to `Application.temporaryCachePath`.
+It uses Application.productName to find the game window. This function doesn't work in the editor.
+
+You can add flag parameters to control the behaviour of the recorder. See below for flags.
+
+
+---
+
+### ***Flags***
 
 
 ### [Optional] `--api-id "<ID>"`
@@ -115,7 +134,6 @@ Sets the API ID used for authentication when communicating with the cloud storag
 {"--api-id", "<YOUR API ID>"},
 ```
 
----
 
 ### [Optional] `--api-key "<Key>"`
 
