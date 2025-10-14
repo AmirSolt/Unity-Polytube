@@ -102,7 +102,7 @@ Since the recorder, `polytube.exe` runs in a different process it will keep reco
 ### [Optional] `--api-id "<ID>"`
 
 **Description:**
-Sets the API ID used for authentication when communicating with the upload endpoint.
+Sets the API ID used for authentication when communicating with the cloud storage endpoint.
 **Details:**
 * Currently it only works with [polytube.io](https://polytube.io) cloud storage.
 **Example:**
@@ -116,7 +116,7 @@ Sets the API ID used for authentication when communicating with the upload endpo
 ### [Optional] `--api-key "<Key>"`
 
 **Description:**
-Sets the API key used for authentication with the upload endpoint.
+Sets the API key used for authentication with the cloud storage endpoint.
 **Details:**
 * Currently it only works with [polytube.io](https://polytube.io) cloud storage.
 **Example:**
