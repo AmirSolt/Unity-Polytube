@@ -112,7 +112,7 @@ Currently, the recorder wipes out any previous recordings, so you don't have to 
 ### `Start(Dictionary<string, string> userFlags=null)`
 
 This function starts recording the game window and saves the files to `Application.temporaryCachePath`.
-It uses Application.productName to find the game window. This function doesn't work in the editor.
+It uses `Application.productName` to find the game window. This function won't work in the editor.
 
 You can add flag parameters to control the behaviour of the recorder. See below for flags.
 
