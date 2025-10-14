@@ -83,7 +83,7 @@ Polytube.SessionRecorder.Main.Start(new Dictionary<string, string>{
 
 The recorder is designed to shut down automatically when the target window closes. Do not kill the process abruptly.
 
-### Proper Consent Forms
+### Proper consent forms
 
 Make sure you comply with privacy laws in every region where your software will be released. If your application uses cloud storage and doesn't meet these regulations, it could be banned or restricted.
 
