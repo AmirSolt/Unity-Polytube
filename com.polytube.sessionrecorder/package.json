@@ -2,7 +2,7 @@
   "name": "com.polytube.sessionrecorder",
   "version": "1.0.0",
   "displayName": "Session Recorder",
-  "description": "Records gameplay sessions and uploads them to the cloud.",
+  "description": "Polytube is an analytics tool that records gameplay sessions for playtesting and debugging. It uses GPU duplication for high performance and minimal impact on system resources, and can automatically upload recordings to the cloud when valid credentials are provided.",
   "author": {
     "name": "Polytube",
     "email": "support@polytube.io",
