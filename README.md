@@ -96,7 +96,7 @@ Since the recorder, `polytube.exe` runs in a different process it will keep reco
 ---
 
 
-## Arguments {#arguments}
+## Arguments
 
 
 ### `--api-id "<ID>"`
