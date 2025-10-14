@@ -37,7 +37,7 @@
 
 > **Note:**  
 > The `polytube.exe` software is licensed under [Creative Commons Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)](https://creativecommons.org/licenses/by-nd/4.0/).  
-> It is **free to use and share**, but **modification or redistribution of modified versions is not permitted**.
+> It is **free to use and redistribute for commercial use**, but **modification or redistribution of modified versions is not permitted**.
 
 
 
