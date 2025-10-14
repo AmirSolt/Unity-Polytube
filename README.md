@@ -89,6 +89,7 @@ Make sure you comply with privacy laws in every region where your software will 
 
 ### It's designed to record till the last momment
 
-Since the recorder, `polytube.exe` runs in a different process it will keep recording even if your game crashes. Once the game window is closed for any reason it will stop recording and close all services. 
+Since the recorder, `polytube.exe` runs in a different process it will keep recording even if your game crashes. Once the game window is closed for any reason it will stop recording and close all services.
+
 ---
 
