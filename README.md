@@ -114,41 +114,6 @@ Currently, the recorder wipes out any previous recordings, so you don't have to 
 This function starts recording the game window and saves the files to `Application.temporaryCachePath`.
 It uses `Application.productName` to find the game window. This function won't work in the editor.
 
-You can add flag parameters to control the behaviour of the recorder. See below for flags.
+You can add flag parameters to control the behaviour of the recorder. See [https://github.com/AmirSolt/Polytube](https://github.com/AmirSolt/Polytube) for more information.
 
 
----
-
-### ***Flags***
-
-
-### [Optional] `--api-id "<ID>"`
-
-**Description:**
-Sets the API ID used for authentication when communicating with the cloud storage endpoint.
-**Details:**
-* Currently it only works with [polytube.io](https://polytube.io) cloud storage.
-**Example:**
-
-```bash
-{"--api-id", "<YOUR API ID>"},
-```
-
-
-### [Optional] `--api-key "<Key>"`
-
-**Description:**
-Sets the API key used for authentication with the cloud storage endpoint.
-**Details:**
-* Currently it only works with [polytube.io](https://polytube.io) cloud storage.
-**Example:**
-
-```bash
-{"--api-key", "<YOUR API KEY>"},
-```
-
----
-
-## Upcoming features
-- Add an option to disable wiping out old sessions.
-- A `Stop()` function to stop the recording manually.
