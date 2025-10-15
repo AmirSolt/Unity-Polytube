@@ -116,4 +116,8 @@ It uses `Application.productName` to find the game window. This function won't w
 
 You can add flag parameters to control the behaviour of the recorder. See [https://github.com/AmirSolt/Polytube](https://github.com/AmirSolt/Polytube) for more information.
 
+---
 
+## Upcoming features
+- Add an option to disable wiping out old sessions.
+- A `Stop()` function to stop the recording manually.
