@@ -8,7 +8,7 @@
 <h4 align="center">
   <a href="#documentation">Documentation</a> |
   <a href="https://polytube.io/">Polytube Cloud Storage</a> |
-  <a href="https://dev.polytube.io/polytube.exe">Polytube.exe Download</a>
+  <a href="https://github.com/AmirSolt/Polytube">Polytube core</a>
 </h4>
 
 
