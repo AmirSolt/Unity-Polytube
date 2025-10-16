@@ -40,6 +40,11 @@ namespace Polytube.SessionRecorder
         // --------------------------
         public static void Start(Dictionary<string, string> userFlags = null)
         {
+            if (Application.isEditor)
+            {
+                UnityEngine.Debug.Log("Polytube.SessionRecorder.Start skipped (running in Unity Editor)");
+                return;
+            }
 
             userFlags ??= new Dictionary<string, string>();
 
