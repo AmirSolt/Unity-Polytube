@@ -38,21 +38,22 @@ namespace Polytube.SessionRecorder
         // --------------------------
         // Manual start with credentials
         // --------------------------
-        public static void Start(Dictionary<string, string> userFlags=null)
+        public static void Start(Dictionary<string, string> userFlags = null)
         {
 
             userFlags ??= new Dictionary<string, string>();
-            
+
             if (exeProcess != null) return; // already started
 
             if (!InitializeEnvironment()) return;
 
-            
+
             Dictionary<string, string> defaultFlags = new Dictionary<string, string>
             {
                 {"--title",$"\"{Application.productName}\""},
                 {"--app-name",$"\"{Application.productName}\""},
                 {"--app-version",$"\"{Application.version}\""},
+                {"--engine",$"Unity \"{Application.unityVersion}\""},
                 {"--out",$"\"{SessionTempDir}\""},
             };
 
@@ -66,6 +67,45 @@ namespace Polytube.SessionRecorder
             Application.logMessageReceived += OnConsoleLog;
             Application.quitting += OnQuit;
         }
+        
+              // --------------------------
+        // Graceful stop function
+        // --------------------------
+        public static void Stop()
+        {
+            try
+            {
+                if (exeWriter != null && exeProcess != null && !exeProcess.HasExited)
+                {
+                    UnityEngine.Debug.Log("[SessionRecorder] Sending stop signal to polytube.exe...");
+
+                    // Send a "stop" command or EOF to the process
+                    exeWriter.WriteLine("::STOP::");
+                    exeWriter.Flush();
+                    exeWriter.Close();
+                }
+
+                if (exeProcess != null && !exeProcess.HasExited)
+                {
+                    // Wait a short time for it to exit gracefully
+                    if (!exeProcess.WaitForExit(3000))
+                    {
+                        UnityEngine.Debug.LogWarning("[SessionRecorder] polytube.exe did not exit in time, killing process...");
+                        exeProcess.Kill();
+                    }
+                }
+
+                exeWriter = null;
+                exeProcess = null;
+
+                UnityEngine.Debug.Log("[SessionRecorder] polytube.exe stopped gracefully.");
+            }
+            catch (Exception ex)
+            {
+                UnityEngine.Debug.LogWarning($"[SessionRecorder] Error during Stop(): {ex.Message}");
+            }
+        }
+
 
         // --------------------------
         // Common environment setup
