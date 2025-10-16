@@ -8,7 +8,7 @@
 <h4 align="center">
   <a href="#documentation">Documentation</a> |
   <a href="https://polytube.io/">Polytube Cloud Storage</a> |
-  <a href="https://dev.polytube.io/polytube.exe">Polytube.exe Download</a>
+  <a href="https://github.com/AmirSolt/Polytube">Polytube core</a>
 </h4>
 
 
@@ -32,7 +32,7 @@
 
 ### 2. Add the polytube.exe
 
-1. **Download the executable**: [https://dev.polytube.io/polytube.exe](https://dev.polytube.io/polytube.exe)
+1. **Download the latest executable**: [https://github.com/AmirSolt/Polytube/releases](https://github.com/AmirSolt/Polytube/releases)
 
 2. **Place** the downloaded `polytube.exe` file inside your Unity project’s `Assets/StreamingAssets/` directory.
 
@@ -114,38 +114,7 @@ Currently, the recorder wipes out any previous recordings, so you don't have to 
 This function starts recording the game window and saves the files to `Application.temporaryCachePath`.
 It uses `Application.productName` to find the game window. This function won't work in the editor.
 
-You can add flag parameters to control the behaviour of the recorder. See below for flags.
-
-
----
-
-### ***Flags***
-
-
-### [Optional] `--api-id "<ID>"`
-
-**Description:**
-Sets the API ID used for authentication when communicating with the cloud storage endpoint.
-**Details:**
-* Currently it only works with [polytube.io](https://polytube.io) cloud storage.
-**Example:**
-
-```bash
-{"--api-id", "<YOUR API ID>"},
-```
-
-
-### [Optional] `--api-key "<Key>"`
-
-**Description:**
-Sets the API key used for authentication with the cloud storage endpoint.
-**Details:**
-* Currently it only works with [polytube.io](https://polytube.io) cloud storage.
-**Example:**
-
-```bash
-{"--api-key", "<YOUR API KEY>"},
-```
+You can add flag parameters to control the behaviour of the recorder. See [https://github.com/AmirSolt/Polytube](https://github.com/AmirSolt/Polytube) for more information.
 
 ---
 
