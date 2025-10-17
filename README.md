@@ -36,11 +36,6 @@
 
 2. **Place** the downloaded `polytube.exe` file inside your Unity project’s `Assets/StreamingAssets/` directory.
 
-> **Note:**  
-> The `polytube.exe` software is licensed under [Creative Commons Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)](https://creativecommons.org/licenses/by-nd/4.0/).  
-> It is **free to use and redistribute for commercial use**, but **modification or redistribution of modified versions is not permitted**.
-
-
 
 ### 3. Start recording
 
@@ -52,7 +47,6 @@ using Polytube.SessionRecorder;
 Polytube.SessionRecorder.Main.Start();
 ```
 
-See [documentation](#documentation)
 
 This starts recording the game window and saves the files to `Application.temporaryCachePath`. 
 The recording will close immediately inside the editor since there's no game window.
@@ -67,7 +61,6 @@ If you provide an `ApiId` and `ApiKey`, the recordings will automatically upload
 
 You can sign up for access at: [https://polytube.io/](https://polytube.io/)
 
-See [documentation](#documentation)
 
 Example:
 
@@ -79,6 +72,17 @@ Polytube.SessionRecorder.Main.Start(new Dictionary<string, string>{
   {"--api-key", "<YOUR API KEY>"}
 });
 ```
+
+### 5. Stop recording
+
+You can gracefully stop the recording at any time by calling:
+
+```csharp
+using Polytube.SessionRecorder;
+
+Polytube.SessionRecorder.Main.Stop();
+```
+
 ---
 
 ## Notes
@@ -115,6 +119,11 @@ This function starts recording the game window and saves the files to `Applicati
 It uses `Application.productName` to find the game window. This function won't work in the editor.
 
 You can add flag parameters to control the behaviour of the recorder. See [https://github.com/AmirSolt/Polytube](https://github.com/AmirSolt/Polytube) for more information.
+
+
+### `Stop()`
+
+This gracefully kills the polytube.exe process making sure all recordings and uploads are finalized.
 
 ---
 
