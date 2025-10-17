@@ -32,7 +32,7 @@
 
 ### 2. Add the polytube.exe
 
-1. **Download the latest executable**: [https://github.com/AmirSolt/Polytube/releases](https://github.com/AmirSolt/Polytube/releases)
+1. **Download the latest stable polytube.exe**: [https://github.com/AmirSolt/Polytube/releases](https://github.com/AmirSolt/Polytube/releases)
 
 2. **Place** the downloaded `polytube.exe` file inside your Unity project’s `Assets/StreamingAssets/` directory.
 
