@@ -58,7 +58,7 @@ namespace Polytube.SessionRecorder
                 {"--title",$"\"{Application.productName}\""},
                 {"--app-name",$"\"{Application.productName}\""},
                 {"--app-version",$"\"{Application.version}\""},
-                {"--engine",$"Unity \"{Application.unityVersion}\""},
+                {"--engine",$"\"Unity {Application.unityVersion}\""},
                 {"--out",$"\"{SessionTempDir}\""},
             };
 
